@@ -1,7 +1,7 @@
 lazy val webapp = (project in file("webapp"))
   .enablePlugins(PlayScala)
   .settings(
-    name := """play-scala-compile-di-example""",
+    name := """play-service-template""",
     version := "1.0-SNAPSHOT",
     scalaVersion := "2.13.5",
     libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "5.0.0" % Test,
@@ -11,5 +11,13 @@ lazy val webapp = (project in file("webapp"))
       "-feature",
       "-unchecked",
       "-Xfatal-warnings"
+    ),
+    dockerExposedPorts += 9000,
+    dockerBaseImage := "openjdk:12.0.1-jdk",
+    Universal / javaOptions ++= Seq(
+      // don't write any pid files
+      "-Dpidfile.path=/dev/null",
+      // reference a logback config file that has no file appenders
+      "-Dlogback.configurationFile=logback-prod.xml"
     )
   )
