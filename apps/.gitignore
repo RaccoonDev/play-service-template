@@ -30,3 +30,7 @@ RUNNING_PID
 project/project/
 project/metals.sbt
 .vscode/
+
+# Idea
+.bsp/
+.idea/
