@@ -1,4 +1,8 @@
-# play-scala-compile-di-example
+# Play Service Template
+
+In this repository I'm experimenting with sceleton of a potential service in modern SOA environment.
+
+# Original content of README file from Lightbend Tech Hub
 
 This is an example of Play using the Scala API with manually wired compile time dependency injection.
 
