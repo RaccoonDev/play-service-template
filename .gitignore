@@ -23,3 +23,10 @@ target
 # Play
 logs
 RUNNING_PID
+
+# VSCode, Metals, Bloop
+.bloop/
+.metals/
+project/project/
+project/metals.sbt
+.vscode/
