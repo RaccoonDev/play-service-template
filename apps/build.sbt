@@ -1,4 +1,4 @@
-lazy val root = (project in file("."))
+lazy val webapp = (project in file("webapp"))
   .enablePlugins(PlayScala)
   .settings(
     name := """play-scala-compile-di-example""",
