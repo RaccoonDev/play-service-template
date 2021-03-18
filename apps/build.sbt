@@ -4,7 +4,10 @@ lazy val webapp = (project in file("webapp"))
     name := """play-service-template""",
     version := "1.0-SNAPSHOT",
     scalaVersion := "2.13.5",
-    libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "5.0.0" % Test,
+    libraryDependencies ++= Seq(
+      "net.logstash.logback" % "logstash-logback-encoder" % "6.2",
+      "org.scalatestplus.play" %% "scalatestplus-play" % "5.0.0" % Test
+    ),
     scalacOptions ++= List(
       "-encoding", "utf8",
       "-deprecation",

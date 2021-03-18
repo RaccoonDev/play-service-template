@@ -1,7 +1,5 @@
 package controllers
 
-import javax.inject.Inject
-
 import play.api.mvc._
 
 /**
@@ -9,7 +7,7 @@ import play.api.mvc._
  * application's home page.
  */
 
-class HomeController @Inject()(cc: ControllerComponents) extends AbstractController(cc) {
+class HomeController (cc: ControllerComponents) extends AbstractController(cc) {
 
   /**
    * Create an Action to render an HTML page with a welcome message.
@@ -17,7 +15,7 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
    * will be called when the application receives a `GET` request with
    * a path of `/`.
    */
-  def index = Action {
+  def index: Action[AnyContent] = Action {
     Ok(views.html.index("Your new application is ready."))
   }
 
